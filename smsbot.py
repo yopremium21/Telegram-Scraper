@@ -84,9 +84,12 @@ class main():
                 print(gr+"[+] Waiting {} seconds".format(SLEEP_TIME))
                 time.sleep(SLEEP_TIME)
             except PeerFloodError:
-                print(re+"[!] Getting Flood Error from telegram. \n[!] Script is stopping now. \n[!] Please try again after some time.")
-                client.disconnect()
-                sys.exit()
+                print(re+"[!] Getting Flood Error from telegram. \n[!] Next Try in 1HR")
+                #client.disconnect()
+               # sys.exit()
+                time.sleep(3600)
+                continue
+                
             except Exception as e:
                 print(re+"[!] Error:", e)
                 print(re+"[!] Trying to continue...")
