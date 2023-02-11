@@ -12,6 +12,8 @@ re="\033[1;31m"
 gr="\033[1;32m"
 cy="\033[1;36m"
 SLEEP_TIME = 30
+SLEEP_TIME_WAIT = 300
+TIME = 0
 
 class main():
 
@@ -88,6 +90,8 @@ class main():
             except Exception as e:
                 print(re+"[!] Error:", e)
                 print(re+"[!] Trying to continue...")
+                print(re+"[+] Waiting {} seconds".format(SLEEP_TIME_WAIT))
+                time.sleep(SLEEP_TIME_WAIT)
                 continue
         client.disconnect()
         print("Done. Message sent to all users.")
